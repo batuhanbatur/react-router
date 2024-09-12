@@ -9,6 +9,7 @@ import { newPostRoute } from "./pages/NewPost";
 import { newUserRoute } from "./pages/NewUser";
 import { newTodoRoute } from "./pages/NewTodo";
 import { newCommentRoute } from "./pages/NewComment";
+import { editPostRoute } from "./pages/EditPost";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ export const router = createBrowserRouter([
                 children: [
                   { index: true, ...postRoute },
                   { path: "newcomment", ...newCommentRoute },
+                  { path: "edit", ...editPostRoute },
                 ],
               },
             ],
@@ -51,7 +53,6 @@ export const router = createBrowserRouter([
               { path: "newtodo", ...newTodoRoute },
             ],
           },
-
           { path: "*", element: <h1>404 - Page Not Found</h1> },
         ],
       },
